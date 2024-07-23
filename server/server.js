@@ -36,6 +36,8 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/dist/index.html'));
 });
 }
+console.log("__dirname:", __dirname);
+console.log("Static files path:", path.join(__dirname, '../client/dist'));
 
 db.once('open', () => {
   app.listen(PORT, () => {console.log(`🌍 API server running on port ${PORT}!`);
